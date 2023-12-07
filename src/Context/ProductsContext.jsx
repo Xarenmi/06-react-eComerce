@@ -13,7 +13,11 @@ function ProductProvider({ children }) {
   useEffect(() => {
     setProductList(productDB)
     setLoading(false)
+
+    const uniqueCategories = [...new Set(productList.map(product => product.category))]
+    setCategories(uniqueCategories)
   }, [])
+
 
   const data = {
     search,
