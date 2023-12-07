@@ -1,5 +1,5 @@
 import React from 'react'
-import dancingJesus from '../../public/Dancing-Jesus-resize.gif'
+import dancingJesus from '@/assets/Dancing-Jesus-resize.gif'
 
 const AddProduct = () => {
     return (
