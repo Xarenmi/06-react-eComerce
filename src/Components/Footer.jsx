@@ -1,24 +1,28 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import '@/assets/footer.sass'
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className='footer'>
       <section>
-        <h3>
-          Get to know us
-        </h3>
+        <Link to='https://github.com/Xarenmi' className='footer__link'>
+          <h4>Get to know us</h4>
+        </Link>
       </section>
       <section>
-        <h3>
+      <Link to='/sell' className='footer__link'>
+        <h4>
           Make money with us
-        </h3>
+        </h4>
+      </Link>
       </section>
       <section>
-        <h3>Assistance</h3>
+      <Link to='/help' className='footer__link'>
+        <h4>Assistance</h4>
           {/* - Returns and Replacements */}
+      </Link>
       </section>
-
     </footer>
   )
 }

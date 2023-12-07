@@ -1,9 +1,10 @@
 import React from 'react';
+import dancingJesus from '../../public/Dancing-Jesus-resize.gif'
 
 const Home = () => {
   return (
-    <div>
-      <p>HOME</p>
+    <div className='home'>
+     <img src={dancingJesus} alt="Dancing Jesus" />
     </div>
   );
 };

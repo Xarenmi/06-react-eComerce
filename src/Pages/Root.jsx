@@ -1,6 +1,6 @@
-import React from 'react';
-import { Header, Footer } from '@/Components';
-import { Outlet } from 'react-router-dom';
+import React from 'react'
+import { Outlet } from 'react-router-dom'
+import { Header, Footer } from '@/Components'
 
 const Root = () => {
   return (
@@ -9,7 +9,7 @@ const Root = () => {
       <Outlet />
       <Footer />
     </>
-  );
-};
+  )
+}
 
 export default Root;

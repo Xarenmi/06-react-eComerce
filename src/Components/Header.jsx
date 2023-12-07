@@ -1,26 +1,36 @@
 import { Link } from 'react-router-dom'
 import '@/assets/header.sass'
-import logo from '@/assets/Xmart_p.svg'
+import logo from '@/assets/Xmart-logo.svg'
+import { BsCart4, BsMagic, BsFillPinMapFill, BsFillPersonFill } from 'react-icons/bs'
 
 const Header = () => {
+  const cartItems = [1, 2, 3]
+  const client = {
+    location: 'México',
+  }
+
   return (
     <header className='header'>
       <section className='top'>
-        <Link to='/'>
-          <img
-            className='top__logo'
-            src= {logo}
-            alt='Xmart Logo'
-          />
-        </Link>
-
+        <div top__logoContainer>
+          <Link to='/'>
+            <img
+              className='top__logo'
+              src={logo}
+              alt='Xmart Logo'
+            />
+          </Link>
+        </div>
+        
         <div className='top__deliveryRegion' aria-label='Delivery region'>
-          {/* Add content here */}
+          <p>Enviar a:</p>
+          <BsFillPinMapFill />  {client.location}
         </div>
 
         <label htmlFor='searchInput' className='visually-hidden'>
           Search for products
         </label>
+    
         <input
           id='searchInput'
           className='top__searchInput'
@@ -28,17 +38,20 @@ const Header = () => {
           placeholder='Search products...'
           aria-label='Search for products'
         />
-        <Link to='/login'>
-          <button className='top__loginButton' aria-label='Log in'>
-            Log In
-          </button>
-        </Link>
 
         <div className='top__cart' aria-label='Cart'>
           <Link to='/cart'>
-            <p>Cart</p>
+            <p>{cartItems.length}</p>
+            <p><BsCart4 className=''/></p>
           </Link>
         </div>
+
+        <Link to='/login'>
+          <BsFillPersonFill className='top__login'/>
+          {/* <button className='top__loginButton' aria-label='Log in'>
+            Log In
+          </button> */}
+        </Link>
       </section>
 
       <nav className='navbar' aria-label='Category navigation'>

@@ -4,6 +4,7 @@ $midnight-green: #005067
 $metallic-seaweed: #048399
 $cherry-blossom-pink: #FEB9C6
 $turkish-rose: #B96B85
+$banana-yellow: #FDD835
 
 // FONT + WEIGHTS
 $montserrat: 'Montserrat', sans-serif
@@ -24,3 +25,11 @@ $medium-italic: 1,600
   flex-direction: row
   align-items: center
   justify-content: $spacing
+
+@mixin block-flex($width)
+  left: 0
+  width: $width
+  display: flex
+  align-items: center
+  justify-items: center
+  flex-direction: column
