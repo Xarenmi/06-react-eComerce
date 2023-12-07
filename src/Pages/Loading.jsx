@@ -1,4 +1,4 @@
-import dancingJesus from '../../public/Dancing-Jesus-resize.gif'
+import dancingJesus from '@/assets/Dancing-Jesus-resize.gif'
 
 const Loading = () => {
   return (
