@@ -1,24 +1,20 @@
 import React from 'react'
 import Card from './Card'
+import { shuffle }from '@/assets/modules/shuffle.js'
+import { useProductContext } from '@/Context/ProductsContext'
 
 const FourCardHolder = ({category}) => {
-    let shuffled = category.slice(0);
-    let selected = [];
 
-    for (let i = shuffled.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-    }
-
-    selected = shuffled.slice(0, 4)
-
+  const { productList } = useProductContext()
+  const categoryProducts = productList.filter((product) => product.category === category)
+  const randomProducts  = shuffle(categoryProducts, 4)
+  
   return (
     <div className='home__fourCardHolder'>
-        <p>{category.name}</p>
-        <Card product={selected[0]} className='home__fourCardHolder_Card'/>
-        <Card product={selected[1]} className='home__fourCardHolder_Card'/>
-        <Card product={selected[2]} className='home__fourCardHolder_Card'/>
-        <Card product={selected[3]} className='home__fourCardHolder_Card'/>
+        <p>{category}</p>
+        {randomProducts.map((product) => (
+      <Card key={product.id} id={product.id} className='home__fourCardHolder__Card' />
+    ))}
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import './header.sass'
-import logo from '@/assets/Xmart-logo.svg'
-import { BsCart4, BsMagic, BsFillPinMapFill, BsFillPersonFill } from 'react-icons/bs'
+import logo from '@/assets/img/Xmart-logo.svg'
+import { BsCart4,  BsFillPinMapFill, BsFillPersonFill } from 'react-icons/bs'
 
 const Header = () => {
   const cartItems = [1, 2, 3, 4]
@@ -57,7 +57,7 @@ const Header = () => {
       </section>
 
       <nav className='navbar' aria-label='Category navigation'>
-        {navCategories.map((cat) => <button className='navbar__button'>{cat.toUpperCase()}</button>)}
+        {navCategories.map((cat, index) => <button key={index} className='navbar__button'>{cat.toUpperCase()}</button>)}
       </nav>
     </header>
 
