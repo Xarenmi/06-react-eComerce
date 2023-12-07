@@ -8,11 +8,12 @@ const Header = () => {
   const client = {
     location: 'México'
   }
+  const navCategories = ['women', 'men', 'gadgets', 'automotive', 'home deco', 'skincare', 'groceries']
 
   return (
     <header className='header'>
       <section className='top'>
-        <div top__logoContainer>
+        <div className='top__logoContainer'>
           <Link to='/' className='top__logoLink'>
             <img
               className='top__logo'
@@ -56,12 +57,7 @@ const Header = () => {
       </section>
 
       <nav className='navbar' aria-label='Category navigation'>
-        <button className='navbar__button'>Cat1</button>
-        <button className='navbar__button'>Cat2</button>
-        <button className='navbar__button'>Cat3</button>
-        <button className='navbar__button'>Cat4</button>
-        <button className='navbar__button'>Cat5</button>
-        <button className='navbar__button'>Cat6</button>
+        {navCategories.map((cat) => <button className='navbar__button'>{cat.toUpperCase()}</button>)}
       </nav>
     </header>
 
