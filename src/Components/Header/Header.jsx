@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom'
-import '@/assets/header.sass'
+import './header.sass'
 import logo from '@/assets/Xmart-logo.svg'
 import { BsCart4, BsMagic, BsFillPinMapFill, BsFillPersonFill } from 'react-icons/bs'
 
 const Header = () => {
-  const cartItems = [1, 2, 3]
+  const cartItems = [1, 2, 3, 4]
   const client = {
-    location: 'México',
+    location: 'México'
   }
 
   return (
@@ -22,7 +22,7 @@ const Header = () => {
             <p>Xmart</p>
           </Link>
         </div>
-        
+
         <div className='top__deliveryRegion' aria-label='Delivery region'>
           <p>Enviar a:</p>
           <BsFillPinMapFill />  {client.location}
@@ -31,7 +31,7 @@ const Header = () => {
         <label htmlFor='searchInput' className='visually-hidden'>
           Search for products
         </label>
-    
+
         <input
           id='searchInput'
           className='top__searchInput'
@@ -43,12 +43,12 @@ const Header = () => {
         <div className='top__cart' aria-label='Cart'>
           <Link to='/cart'>
             <p>{cartItems.length}</p>
-            <p><BsCart4 className=''/></p>
+            <p><BsCart4 className='' /></p>
           </Link>
         </div>
 
         <Link to='/login'>
-          <BsFillPersonFill className='top__login'/>
+          <BsFillPersonFill className='top__login' />
           {/* <button className='top__loginButton' aria-label='Log in'>
             Log In
           </button> */}

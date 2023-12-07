@@ -1,13 +1,16 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
+import { ProductProvider } from '@/Context/ProductsContext'
 import { Header, Footer } from '@/Components'
 
 const Root = () => {
   return (
     <>
-      <Header />
-      <Outlet />
-      <Footer />
+      <ProductProvider >
+        <Header />
+        <Outlet />
+        <Footer />
+      </ProductProvider>
     </>
   )
 }
