@@ -13,12 +13,13 @@ const Header = () => {
     <header className='header'>
       <section className='top'>
         <div top__logoContainer>
-          <Link to='/'>
+          <Link to='/' className='top__logoLink'>
             <img
               className='top__logo'
               src={logo}
               alt='Xmart Logo'
             />
+            <p>Xmart</p>
           </Link>
         </div>
         

@@ -3,9 +3,11 @@ import dancingJesus from '../../public/Dancing-Jesus-resize.gif'
 
 const Home = () => {
   return (
-    <div className='home'>
-     <img src={dancingJesus} alt="Dancing Jesus" />
-    </div>
+    <main>
+      <h1>HOME SECTION</h1>
+      <h2>ON DEVELOPMENT</h2>
+      <img src={dancingJesus} alt="Dancing Jesus" />
+    </main>
   );
 };
 

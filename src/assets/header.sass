@@ -3,6 +3,7 @@
 .header
     maring: 0
     padding: 0
+    height: 150px
     width: 100%
     display: grid
     grid-column: 1fr
@@ -15,8 +16,19 @@
     @include inline-flex(space-around)
 
     &__logo
-        height: 100px
-        margin-top: 15px
+        height: 80px
+        margin: 15px 0 0 0
+    
+    &__logoLink
+        color: $cherry-blossom-pink
+        text-decoration: none
+        
+        p
+            margin: 0
+            font-size: 15px
+            font-weight: $bold
+            text-align: center
+            margin-bottom: 10px
 
     &__deliveryRegion
         color: $banana-yellow
@@ -66,7 +78,7 @@
 .navbar
 
     height: 30px
-    margin-top: 110px
+    margin-top: 120px
     background-color: #FEB9C6
     @include inline-flex(space-between)
 
