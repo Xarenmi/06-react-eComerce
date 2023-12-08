@@ -1,22 +1,28 @@
-// COLORS
+// Colors
 $dark-green: #021E20
+$turkish-rose: #B96B85
+$banana-yellow: #FDD835
+$jesus-bgcolor: #72b7c2
+$body-bgcolor: #72b7c246
 $midnight-green: #005067
 $metallic-seaweed: #048399
 $cherry-blossom-pink: #FEB9C6
-$turkish-rose: #B96B85
-$banana-yellow: #FDD835
 
-// FONT + WEIGHTS
+// Fonts
 $montserrat: 'Montserrat', sans-serif
 
 $bold: 800
-$light: 0,300
+$light: 300
 $normal: 500
-$lighter: 0,100
-$light-italic: 1,100
-$medium-italic: 1,600
+$lighter: 100
 
-// mixin, used with @include + name
+// Screen Size
+$small-screen: 480px
+$medium-screen: 768px
+$large-screen: 1024px
+
+
+// Mixin
 @mixin inline-flex($spacing)
   left: 0
   width: 100%
@@ -32,3 +38,21 @@ $medium-italic: 1,600
   align-items: center
   justify-items: center
   flex-direction: column
+
+@mixin light-italic
+  font-weight: 100
+  font-style: italic
+
+@mixin medium-italic
+  font-weight: 600
+  font-style: italic
+
+@mixin centered-grid($col, $row )
+    display: grid
+    border-radius: 10px
+    align-items: center
+    justify-items: center
+    margin: 2rem 1rem 1rem
+    grid-template-rows: $row
+    grid-template-columns: $col
+    background-color: rgba(255, 255, 255, 0.7)
