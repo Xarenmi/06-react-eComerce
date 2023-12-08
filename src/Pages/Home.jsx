@@ -3,32 +3,29 @@ import { useProductContext } from '@/Context/ProductsContext'
 import { shuffle } from '@/assets/modules/shuffle.js'
 
 const Home = () => {
-
+  const user = 'Xarenmi'
   const { categories } = useProductContext()
   const randomCategories = shuffle(categories, 6)
 
   return (
     <main className='home'>
-      <section className='home__title'>
-        <h1>HOME</h1>
-        <h2>ON DEVELOPMENT</h2>
-      </section>
+      <h1>{`Welcome back, ${user}`}</h1>
       <section className="home__display">
         <aside className='home__display__triple'>
-            <FourCardHolder category={randomCategories[0]} />
-            <FourCardHolder category={randomCategories[1]} />
-            <FourCardHolder category={randomCategories[2]} />
+          <FourCardHolder category={randomCategories[0]} />
+          <FourCardHolder category={randomCategories[1]} />
+          <FourCardHolder category={randomCategories[2]} />
         </aside>
         <aside className='home__display__row'>
 
         </aside>
         <aside className='home__display__triple'>
-            <FourCardHolder category={randomCategories[3]} />
-            <FourCardHolder category={randomCategories[4]} />
-            <FourCardHolder category={randomCategories[5]} />
+          <FourCardHolder category={randomCategories[3]} />
+          <FourCardHolder category={randomCategories[4]} />
+          <FourCardHolder category={randomCategories[5]} />
         </aside>
         <aside className='home__display__row'>
-          
+
         </aside>
       </section>
 
