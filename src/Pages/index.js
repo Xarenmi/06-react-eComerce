@@ -4,7 +4,8 @@ import Root from './Root.jsx'
 import Login from './Login.jsx'
 import Loading from './Loading.jsx'
 import Product from './Product.jsx'
+import Category from './Category.jsx'
 import AddProduct from './AddProduct.jsx'
 import Assistance from './Assistance.jsx'
 
-export { AddProduct, Assistance, Cart, Home, Login, Loading, Product, Root }
+export { AddProduct, Assistance, Category, Cart, Home, Login, Loading, Product, Root }
