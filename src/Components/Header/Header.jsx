@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom'
 import './header.sass'
+import { Link } from 'react-router-dom'
 import logo from '@/assets/img/Xmart-logo.svg'
 import { BsCart4,  BsFillPinMapFill, BsFillPersonFill } from 'react-icons/bs'
 
@@ -8,7 +8,7 @@ const Header = () => {
   const client = {
     location: 'México'
   }
-  const navCategories = ['women', 'men', 'gadgets', 'automotive', 'home deco', 'skincare', 'groceries']
+  const navCategories = ['women', 'men', 'gadgets', 'automotive', 'home-decoration', 'skincare', 'groceries']
 
   return (
     <header className='header'>
@@ -57,7 +57,7 @@ const Header = () => {
       </section>
 
       <nav className='navbar' aria-label='Category navigation'>
-        {navCategories.map((cat, index) => <button key={index} className='navbar__button'>{cat.toUpperCase()}</button>)}
+        {navCategories.map((cat, index) => <Link to={`/category/${cat}`} key={index}> <button  className='navbar__button'>{cat.toUpperCase().replace(/-/g, ' ')}</button> </Link>)}
       </nav>
     </header>
 
