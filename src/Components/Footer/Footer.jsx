@@ -11,17 +11,16 @@ const Footer = () => {
         </Link>
       </section>
       <section>
-      <Link to='/sell' className='footer__link'>
-        <h4>
-          Make money with us
-        </h4>
-      </Link>
+        <Link to='/sell' className='footer__link'>
+          <h4>
+            Make money with us
+          </h4>
+        </Link>
       </section>
       <section>
-      <Link to='/help' className='footer__link'>
-        <h4>Assistance</h4>
-          {/* - Returns and Replacements */}
-      </Link>
+        <Link to='/help' className='footer__link'>
+            <h4>Need assistance?</h4>
+        </Link>
       </section>
     </footer>
   )
