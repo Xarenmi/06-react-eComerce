@@ -6,12 +6,13 @@
     height: 150px
     width: 100%
     display: grid
-    grid-column: 1fr
+    grid-template-column: 1fr
     place-items: center
     background-color: #048399
 
 .top
     top: 0
+    position: fixed
     background-color: $metallic-seaweed
     @include inline-flex(space-around)
 
@@ -78,6 +79,7 @@
 .navbar
 
     height: 30px
+    position: fixed
     margin-top: 120px
     background-color: #FEB9C6
     @include inline-flex(space-between)

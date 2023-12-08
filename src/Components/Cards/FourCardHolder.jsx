@@ -11,7 +11,7 @@ const FourCardHolder = ({category}) => {
   
   return (
     <div className='home__fourCardHolder'>
-        <p>{category}</p>
+        <h2>{category}</h2>
         {randomProducts.map((product) => (
       <Card key={product.id} id={product.id} className='home__fourCardHolder__Card' />
     ))}
