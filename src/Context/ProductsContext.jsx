@@ -7,7 +7,6 @@ function ProductProvider({ children }) {
   const [productList, setProductList] = useState([])
   const [categories, setCategories] = useState([])
   const [loading, setLoading] = useState(true)
-  const [selected, setSelected] = useState({})
   const [search, setSearch] = useState('')
 
   useEffect(() => {
@@ -20,11 +19,9 @@ function ProductProvider({ children }) {
   const data = {
     search,
     loading,
-    selected,
     setSearch,
     categories,
     productList,
-    setSelected,
     setCategories,
   }
 
