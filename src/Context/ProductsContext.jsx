@@ -7,22 +7,18 @@ function ProductProvider({ children }) {
   const [productList, setProductList] = useState([])
   const [categories, setCategories] = useState([])
   const [loading, setLoading] = useState(true)
-  const [search, setSearch] = useState('')
 
   useEffect(() => {
     setProductList(productDB)
-    setLoading(false)
-    const uniqueCategories = [...new Set(productDB.map(product => product.category))];
-    const additionalCategories = ['gadgets', 'women', 'men'];
-    const allCategories = [...uniqueCategories, ...additionalCategories];
-    setCategories(allCategories)
-
+    return () => {
+      setLoading(false)
+      const uniqueCategories = [...new Set(productDB.map((product) => product.category))]
+      setCategories(uniqueCategories)
+    }
   }, [])
 
   const data = {
-    search,
     loading,
-    setSearch,
     categories,
     productList,
     setCategories,
