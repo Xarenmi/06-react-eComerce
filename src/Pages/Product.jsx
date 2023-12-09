@@ -4,12 +4,18 @@ import { useProductContext } from '@/Context/ProductsContext'
 
 const Product = () => {
   const { productList } = useProductContext()
+  console.log(productList)
   let { title } = useParams()
-  const thisProduct = productList.find((product) => product.title.includes(title.replace(/%20/g, ' ')));
+  const thisProduct = productList.find((product) => product.title === title)
+  if (!thisProduct) {
+    console.warn(`Product with title '${title}' not found.`);
+  } else {
+    console.log(thisProduct);
+  }
 
   return (
     <main className='product'>  
-      <p>{thisProduct.category ? thisProduct.category : 'none'}</p>
+      {/* <p>{thisProduct.category}</p> */}
       <h1>{thisProduct.title}</h1>
       <p>{thisProduct.description}</p>
       <p>{thisProduct.price}</p>
