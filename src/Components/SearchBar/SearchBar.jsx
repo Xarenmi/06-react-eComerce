@@ -33,7 +33,7 @@ const SearchBar = () => {
             </label>
             <div className="top__searchContainer">
                 <input
-                    id='search-input'
+                    id='searchInput'
                     className='top__searchContainer__input'
                     type='text'
                     placeholder='Search products...'
@@ -41,7 +41,7 @@ const SearchBar = () => {
                     value={search}
                     onChange={(event) => setSearch(event.target.value)}
                 />
-                <button type="submit" className="top__searchContainer__button" onClick={handleSearchSubmit}>
+                <button type="submit" className="top__searchContainer__button">
                     <BsSearch />
                 </button>
             </div>
