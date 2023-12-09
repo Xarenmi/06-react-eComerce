@@ -21,7 +21,6 @@ $small-screen: 480px
 $medium-screen: 768px
 $large-screen: 1024px
 
-
 // Mixin
 @mixin inline-flex($spacing)
   left: 0
@@ -47,12 +46,10 @@ $large-screen: 1024px
   font-weight: 600
   font-style: italic
 
-@mixin centered-grid($col, $row )
-    display: grid
-    border-radius: 10px
-    align-items: center
-    justify-items: center
-    margin: 2rem 1rem 1rem
-    grid-template-rows: $row
-    grid-template-columns: $col
-    background-color: rgba(255, 255, 255, 0.7)
+@mixin centered-grid()
+  display: grid
+  border-radius: 10px
+  align-items: center
+  justify-items: center
+  margin: 2rem 1rem 1rem
+  background-color: rgba(255, 255, 255, 0.7)

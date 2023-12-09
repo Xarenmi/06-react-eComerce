@@ -2,7 +2,8 @@
 
 .fourCardHolder
     width: 30%
-    @include styles.centered-grid(1fr 1fr, 30px 170px 170px)
+    @include styles.centered-grid()
+    grid-template: 30px 170px 170px / 1fr 1fr  //column / row
 
     & p
         display: none
@@ -30,8 +31,9 @@
             width: 130px
             height: 120px
             overflow: hidden
-            background-size: 100% 100%
-            background-position: center top
+            border-radius: 5px
+            background-size: cover
+            background-position: center center
 
         &__link
             color: styles.$turkish-rose
