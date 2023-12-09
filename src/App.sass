@@ -8,16 +8,20 @@
 
 body
     margin: 0 auto
-    width: 1200px
+    max-width: 13s0rem
     background-color: styles.$jesus-bgcolor
     font-size: 1rem
-   
 
 .visually-hidden
     display: none
 
 main
     width: 100%
+    display: flex
+    flex-direction: row
+    align-items: center
+    align-content: center
+    justify-content: center
     margin-bottom: 100px
     @include styles.block-flex(100%)
     color: styles.$turkish-rose
@@ -27,14 +31,16 @@ main
         margin: 1.3rem 3rem 0 0
         text-align: right
         @include styles.medium-italic
-        color: styles.$metallic-seaweed
+        color: styles.$banana-yellow
 
     .home__display
-        display: block
         width: 100%
-        
+
         &__triple
-            @include styles.inline-flex(space-around)
+            width: 100%
+            display: grid
+            grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr))
 
+@media (max-width: 768px)
 
-
+    //width: 20rem
