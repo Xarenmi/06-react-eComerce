@@ -6,6 +6,7 @@ import { useProductContext } from '@/Context/ProductsContext'
 const Category = () => {
     const { productList } = useProductContext()
     let { name } = useParams()
+    let categoryProducts
     
     switch (name) {
         case 'gadgets':
@@ -30,10 +31,10 @@ const Category = () => {
     }
     
     return (
-        <main className='category'>
-            <h1>{`PRODUCTS IN ${name.toUpperCase()}`}</h1>
+        <main className='search'>
+            <h1>{`PRODUCTS IN ${name.toUpperCase().replace(/-/g, ' ')}`}</h1>
             {categoryProducts.map((product) => (
-                <Card key={product.id} id={product.id} className='category__card' />
+                <Card key={product.id} id={product.id} className='search__card' />
             ))}
         </main>
     )

@@ -9,7 +9,7 @@ const FourCardHolder = ({category}) => {
   const { productList } = useProductContext()
   const categoryProducts = productList.filter((product) => product.category === category)
   const randomProducts  = shuffle(categoryProducts, 4)
-  const selectedCategory = category.replace(/-/g, ' ')
+  const selectedCategory = category ? category.replace(/-/g, ' ') : ''
   
   return (
     <div className='fourCardHolder'>

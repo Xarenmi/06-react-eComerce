@@ -1,7 +1,8 @@
 import './header.sass'
-import { Link } from 'react-router-dom'
 import logo from '@/assets/img/Xmart-logo.svg'
-import { BsCart4,  BsFillPinMapFill, BsFillPersonFill } from 'react-icons/bs'
+import { Link } from 'react-router-dom'
+import SearchBar from '@/Components/SearchBar/SearchBar'
+import { BsCart4, BsFillPinMapFill, BsFillPersonFill } from 'react-icons/bs'
 
 const Header = () => {
   const cartItems = [1, 2, 3, 4]
@@ -29,17 +30,7 @@ const Header = () => {
           <BsFillPinMapFill />  {client.location}
         </div>
 
-        <label htmlFor='searchInput' className='visually-hidden'>
-          Search for products
-        </label>
-
-        <input
-          id='searchInput'
-          className='top__searchInput'
-          type='text'
-          placeholder='Search products...'
-          aria-label='Search for products'
-        />
+        <SearchBar />
 
         <div className='top__cart' aria-label='Cart'>
           <Link to='/cart'>
@@ -57,7 +48,7 @@ const Header = () => {
       </section>
 
       <nav className='navbar' aria-label='Category navigation'>
-        {navCategories.map((cat, index) => <Link to={`/category/${cat}`} key={index}> <button  className='navbar__button'>{cat.toUpperCase().replace(/-/g, ' ')}</button> </Link>)}
+        {navCategories.map((cat, index) => <Link to={`/category/${cat}`} key={index}> <button className='navbar__button'>{cat.toUpperCase().replace(/-/g, ' ')}</button> </Link>)}
       </nav>
     </header>
 
