@@ -6,8 +6,6 @@ import { useProductContext } from '@/Context/ProductsContext'
 const Category = () => {
     const { productList } = useProductContext()
     let { name } = useParams()
-
-    let categoryProducts
     
     switch (name) {
         case 'gadgets':
