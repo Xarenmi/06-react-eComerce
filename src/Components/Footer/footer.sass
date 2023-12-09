@@ -1,13 +1,7 @@
-@import "@/assets/_styles"
+@use '@/assets/_styles' as styles
 
 footer
-  bottom: 0
-  height: 60px
-  position: fixed
-  color: $cherry-blossom-pink
-  background-color: $midnight-green
-  @include inline-flex(space-around)
+  @include styles.bottom-pinned-footer(4rem, styles.$midnight-green)
 
 .footer__link
-    text-decoration: none
-    color: $cherry-blossom-pink
+    @include styles.link( styles.$cherry-blossom-pink)
