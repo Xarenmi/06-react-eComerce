@@ -2,6 +2,7 @@ import '@/Components/Cards/card.sass'
 import React, { useState } from 'react'
 import { useProductContext } from '@/Context/ProductsContext'
 import { useNavigation } from '@/Context/NavigationContext'
+import { BsSearch } from 'react-icons/bs'
 
 
 const SearchBar = () => {
@@ -9,7 +10,7 @@ const SearchBar = () => {
     const [search, setSearch] = useState('')
     const navigate = useNavigation()
 
-    const additionalCategories = ['gadgets', 'women', 'men']
+    const additionalCategories = ['gadgets', 'women', 'men', 'home']
     const allCategories = [...categories, ...additionalCategories]
 
     const handleSearchSubmit = (event) => {
@@ -30,16 +31,20 @@ const SearchBar = () => {
             <label htmlFor='searchInput' className='visually-hidden'>
                 Search for products
             </label>
-
-            <input
-                id='searchInput'
-                className='top__searchInput'
-                type='text'
-                placeholder='Search products...'
-                aria-label='Search for products'
-                value={search}
-                onChange={(event) => setSearch(event.target.value)}
-            />
+            <div className="top__searchContainer">
+                <input
+                    id='search-input'
+                    className='top__searchContainer__input'
+                    type='text'
+                    placeholder='Search products...'
+                    aria-label='Search for products'
+                    value={search}
+                    onChange={(event) => setSearch(event.target.value)}
+                />
+                <button type="submit" className="top__searchContainer__button" onClick={handleSearchSubmit}>
+                    <BsSearch />
+                </button>
+            </div>
         </form>
     );
 };

@@ -12,14 +12,15 @@ const Search = () => {
 
   return (
     <main className='search'>
-      <h1>{`PRODUCTS ACCORDING TO YOUR SEARCH: '${name.toUpperCase()}'`}</h1>
       <div className='search__container'>
-        {products.length > 0 ? (
-          
-          products.map((product) => <Card key={product.id} id={product.id} className='search__container__card' />)
-        ) : (
-          <p>Your search has no results. Try with a different keyword.</p>
-        )}
+        <h1><span>PRODUCTS ACCORDING TO YOUR SEARCH:</span> {` '${name.toUpperCase()}'`}</h1>
+
+          {products.length > 0 ? (
+
+            products.map((product) => <Card key={product.id} id={product.id} className='search__container__card' />)
+          ) : (
+            <p>Your search has no results. Try with a different keyword.</p>
+          )}
       </div>
     </main>
   )

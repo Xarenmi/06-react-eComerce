@@ -7,6 +7,7 @@ $body-bgcolor: #72b7c246
 $midnight-green: #005067
 $metallic-seaweed: #048399
 $cherry-blossom-pink: #FEB9C6
+$main-bgcolor: rgba(255, 255, 255, 0.7)
 
 // Fonts
 $montserrat: 'Montserrat', sans-serif
@@ -22,21 +23,11 @@ $medium-screen: 768px
 $large-screen: 1024px
 
 // Mixin
-@mixin inline-flex($spacing)
-  left: 0
-  width: 100%
-  display: flex
-  flex-direction: row
-  align-items: center
-  justify-content: $spacing
 
-@mixin block-flex($width)
-  left: 0
-  width: $width
-  display: flex
-  align-items: center
-  justify-items: center
-  flex-direction: column
+   //Font
+@mixin link($color)
+  text-decoration: none
+  color: $color
 
 @mixin light-italic
   font-weight: 100
@@ -46,10 +37,64 @@ $large-screen: 1024px
   font-weight: 600
   font-style: italic
 
-@mixin centered-grid()
-  display: grid
+@mixin outline-text($color)
+  -webkit-text-stroke: 1px $color
+  text-stroke: 1px $color
+
+  //header & footer
+@mixin top-pinned-header($height, $bgcolor)
+  top: 0
+  height: $height
+  position: fixed
+  background-color: $bgcolor
+  @include inline-grid(1fr 1fr 8fr 0.5fr 0.5fr)
+
+@mixin search-bar($color)
+  width: calc(100% - 60px)
+  border: none
+  color: $color
+  height: 2.5rem
+  font-size: 15px
+  padding:0  20px
   border-radius: 10px
+
+@mixin bottom-pinned-footer($height, $bgcolor)
+  bottom: 0
+  height: $height
+  position: fixed
+  background-color: $bgcolor
+  @include inline-flex(space-around)
+
+  //flex
+@mixin inline-flex($spacing)
+  width: 100%
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: $spacing
+
+@mixin block-flex($width)
+  width: $width
+  display: flex
   align-items: center
   justify-items: center
-  margin: 2rem 1rem 1rem
-  background-color: rgba(255, 255, 255, 0.7)
+  flex-direction: column
+
+  //grid
+@mixin inline-grid($columns)
+  width: 100%
+  display: grid
+  text-align: center
+  align-items: center
+  justify-content: space-around
+  grid-template-columns: $columns
+  grid-template-rows: repeat(auto-fit)
+
+@mixin autorow-grid($columns)
+
+@mixin centered-grid($bgcolor)
+  display: grid
+  border-radius: 10px
+  justify-items: center
+  align-items: flex-start
+  background-color: $bgcolor
