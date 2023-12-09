@@ -7,8 +7,26 @@ import { BsCart4, BsFillPinMapFill, BsFillPersonFill } from 'react-icons/bs'
 const Header = () => {
   const cartItems = [1, 2, 3, 4]
   const client = {
-    location: 'México'
+    name: 'Xarenmi',
+    locationX: '',
+    locationY: '',
+    location: 'worldwide'
   }
+
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } 
+  }
+
+  
+
+  function showPosition(position) {
+    client.locationY = position.coords.latitude
+    client.locationX = position.coords.longitude
+  }
+  console.log(client)
+
   const navCategories = ['women', 'men', 'gadgets', 'automotive', 'home-decoration', 'skincare', 'groceries']
 
   return (
@@ -26,18 +44,11 @@ const Header = () => {
         </div>
 
         <div className='top__deliveryRegion' aria-label='Delivery region'>
-          <p>Enviar a:</p>
+          <p>Ship to:</p>
           <BsFillPinMapFill />  {client.location}
         </div>
 
         <SearchBar />
-
-        <div className='top__cart' aria-label='Cart'>
-          <Link to='/cart'>
-            <p>{cartItems.length}</p>
-            <p><BsCart4 className='' /></p>
-          </Link>
-        </div>
 
         <Link to='/login'>
           <BsFillPersonFill className='top__login' />
@@ -45,6 +56,13 @@ const Header = () => {
             Log In
           </button> */}
         </Link>
+
+        <div className='top__cart' aria-label='Cart'>
+          <Link to='/cart'>
+            <p>{cartItems.length}</p>
+            <p><BsCart4 className='' /></p>
+          </Link>
+        </div>
       </section>
 
       <nav className='navbar' aria-label='Category navigation'>
