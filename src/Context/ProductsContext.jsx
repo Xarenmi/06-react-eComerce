@@ -13,7 +13,10 @@ function ProductProvider({ children }) {
     setProductList(productDB)
     setLoading(false)
     const uniqueCategories = [...new Set(productDB.map(product => product.category))];
-    setCategories(uniqueCategories);
+    const additionalCategories = ['gadgets', 'women', 'men'];
+    const allCategories = [...uniqueCategories, ...additionalCategories];
+    setCategories(allCategories)
+
   }, [])
 
   const data = {
