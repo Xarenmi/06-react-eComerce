@@ -1,10 +1,11 @@
+import '@/Components/Cards/card.sass'
 import React, { useState } from 'react'
 import { useProductContext } from '@/Context/ProductsContext'
 import { useNavigation } from '@/Context/NavigationContext'
 
 
 const SearchBar = () => {
-    const { categories, productList, } = useProductContext();
+    const { categories } = useProductContext();
     const [search, setSearch] = useState('')
     const navigate = useNavigation()
 
