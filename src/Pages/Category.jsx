@@ -22,7 +22,7 @@ const Category = () => {
       categoryProducts = productList.filter((product) => ['sunglasses', 'fragrances'].some(category => product.category.includes(category)) || product.category.includes(name))
       break;
     case 'home-decoration':
-      categoryProducts = productList.filter((product) => ['furniture'].some(category => product.category.includes(category)) || product.category.includes(name))
+      categoryProducts = productList.filter((product) => ['furniture', 'home'].some(category => product.category.includes(category)) || product.category.includes(name))
       break;
     default:
       categoryProducts = productList.filter((product) => product.category.includes(name));
