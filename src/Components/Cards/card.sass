@@ -1,18 +1,26 @@
 @use "@/assets/_styles" as styles
-
 .search
-    @include styles.block-flex(100%)
-
-    & h1 
-        width: 100%
-        
+    display: block
 
     &__container
         width: 100%
-        @include styles.centered-grid()
-        grid-template-columns: repeat(auto-fit, minmax(200px, 250px))
-        grid-auto-flow: row
         padding: 20px 50px
+        grid-auto-flow: row
+        align-items: flex-start
+        @include styles.centered-grid(styles.$main-bgcolor)
+        grid-template-columns: repeat(auto-fit, minmax(200px, 250px))
+
+        & h1
+            @include styles.medium-italic
+            grid-column: 1 / span 5
+            margin: 30px 15px
+
+            & span
+                font-weight: styles.$light
+
+        & p
+            grid-column: 1 / span 5
+            margin: 30px 15px
 
         &__card
             width: 200px
