@@ -1,13 +1,11 @@
 import { useProductContext } from '@/Context/ProductsContext'
 import { useNavigation } from '@/Context/NavigationContext'
-import { useScreenContext } from '@/Context/ScreenContext'
 import { BsSearch } from 'react-icons/bs'
 import React, { useState } from 'react'
 import '@/Components/Cards/card.sass'
 
 
 const SearchBar = () => {
-    const { screenSize } = useScreenContext()
     const { categories } = useProductContext()
     const [search, setSearch] = useState('')
     const navigate = useNavigation()
@@ -29,7 +27,7 @@ const SearchBar = () => {
     }
 
     return (
-        <form onSubmit={handleSearchSubmit} style={{ gridColumn: screenSize <= 480 && '2 / 9fr' }}>
+        <form onSubmit={handleSearchSubmit}>
             <div className="top__searchContainer">
                 <input
                     id='searchInput'

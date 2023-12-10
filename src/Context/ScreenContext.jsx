@@ -3,7 +3,7 @@ import { createContext, useState, useContext, useEffect } from 'react'
 const ScreenContext = createContext()
 
 function ScreenProvider({ children }) {
-    const [screenSize, setScreenSize] = useState([])
+    const [screenSize, setScreenSize] = useState(() => window.innerWidth)
 
     const handleResize = () => {
         setScreenSize(window.innerWidth)

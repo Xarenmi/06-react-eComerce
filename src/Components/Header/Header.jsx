@@ -34,25 +34,26 @@ const Header = () => {
                   className='top__logo'
                   src={logo}
                   alt='Xmart Logo'
+                  area-label= "Big 'M' in pink color" 
                 />
                 <p>Xmart</p>
               </Link>
             </div>
             <div className='top__deliveryRegion' aria-label='Delivery region'>
               <p>Ship to:</p>
-              <BsFillPinMapFill />  {client.location}
+              <BsFillPinMapFill aria-label='Pin on map'/>  {client.location}
             </div>
 
             <SearchBar />
 
             <Link to='/login'>
-              <BsFillPersonFill className='top__login' />
+              <BsFillPersonFill aria-label='Login button also works for signing up' className='top__login' />
             </Link>
 
             <div className='top__cart' aria-label='Cart'>
               <Link to='/cart'>
                 <p>{cartItems.length}</p>
-                <p><BsCart4 className='' /></p>
+                <p><BsCart4 aria-label='Shopping cart' className='' /></p>
               </Link>
             </div>
           </section>
