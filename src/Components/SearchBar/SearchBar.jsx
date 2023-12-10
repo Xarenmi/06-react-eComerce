@@ -19,11 +19,13 @@ const SearchBar = () => {
         const categoryMatch = allCategories.find((category) => category.toLowerCase().replace(/-/g, ' ') === search.toLowerCase())
         if (categoryMatch) {
             navigate(`/category/${categoryMatch.replace(/ /g, '-')}`)
+            setSearch('')
             return
         } else {
             navigate(`/search/${search}`)
+            setSearch('')
             return
-        }
+        }        
     }
 
     return (
