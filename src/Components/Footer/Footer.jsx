@@ -11,7 +11,7 @@ const Footer = () => {
       const displayed = document.querySelectorAll('.displayed')
 
       for (const item of displayed) {
-        if (window.innerWidth < 720) {
+        if (window.innerWidth < 480) {
           item.style.display = 'none'
         } else {
           item.style.display = 'grid'
@@ -19,7 +19,7 @@ const Footer = () => {
       }
 
       for (const item of hidden) {
-        if (window.innerWidth < 720) {
+        if (window.innerWidth < 480) {
           item.style.display = 'inline'
         } else {
           item.style.display = 'none'
