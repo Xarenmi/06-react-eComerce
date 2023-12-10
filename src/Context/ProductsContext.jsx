@@ -36,8 +36,8 @@ function useProductContext() {
   if (!context) {
     throw new Error('useProductContext must be used within a ProductProvider');
   }
-  return context;
+  return context
 }
 
-export { ProductProvider, useProductContext };
-export default ProductContext;
+export { ProductProvider, useProductContext }
+export default ProductContext
