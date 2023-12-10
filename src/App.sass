@@ -8,6 +8,7 @@
 
 body
     margin: 0 auto
+    min-width: 380px
     max-width: 2100px
     background-color: styles.$jesus-bgcolor
     font-size: 1rem
@@ -18,23 +19,5 @@ body
 main
     margin: 9rem 0 5rem 0
     color: styles.$turkish-rose
-    @include styles.block-flex(100%)
-
-    &.home h1
-        width: 100%
-        margin: 1.3rem 3rem 0 0
-        text-align: right
-        @include styles.medium-italic
-        color: styles.$banana-yellow
-
-    .home__display
-        width: 100%
-
-        &__triple
-            width: 100%
-            display: grid
-            grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr))
-
-@media (max-width: 768px)
-
-    //width: 20rem
+    @include styles.autorow(1fr)
+ 

@@ -25,7 +25,6 @@ const Header = () => {
     client.locationY = position.coords.latitude
     client.locationX = position.coords.longitude
   }
-  console.log(client)
 
   const navCategories = ['women', 'men', 'gadgets', 'automotive', 'home-decoration', 'skincare', 'groceries']
 
