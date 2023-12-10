@@ -38,11 +38,11 @@ const Header = () => {
           });
         },
         () => {
-          alert("Location is not available.");
+          console.log("Location is not available.");
         }
       );
     } else {
-      alert("Geolocation is not supported by this browser.");
+      console.log("Geolocation is not supported by this browser.");
     }
   };
 
