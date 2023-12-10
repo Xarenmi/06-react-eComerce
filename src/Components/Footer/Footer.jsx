@@ -27,11 +27,13 @@ const Footer = () => {
       }
     };
   
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', handleResize)
+    window.addEventListener('orientationchange', handleResize)
     handleResize(); // Initial check on load
   
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('resize', handleResize)
+      window.removeEventListener('orientationchange', handleResize)
     };
   }, []);
 
