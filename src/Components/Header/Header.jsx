@@ -16,14 +16,11 @@ const Header = () => {
     location: 'worldwide'
   }
 
-  //getLocation function 
+  //make getLocation function 
 
-  let navCategories
-  screenSize <= 480 ? 
-  navCategories =  ['women', 'men', 'gadgets', 'automotive', 'home-decoration'] :
-  navCategories =  ['women', 'men', 'gadgets', 'automotive', 'home-decoration', 'skincare', 'groceries']
+  const categories = ['women', 'men', 'gadgets', 'automotive', 'home-decoration', 'skincare', 'groceries']
+  let navCategories = screenSize <= 480 ? categories.slice(0, 5) : categories
   
-
   return (
     <>
       {screenSize >= 481 && (
@@ -73,7 +70,12 @@ const Header = () => {
             <SearchBar />
           </section>
           <nav className='navbar' aria-label='Category navigation'>
-            {navCategories.map((cat, index) => <Link to={`/category/${cat}`} key={index}> <button className='navbar__button'>{cat.toUpperCase().replace(/-/g, ' ')}</button> </Link>)}
+            {navCategories.map((cat, index) =>
+              <Link to={`/category/${cat}`} key={index}>
+                <button className='navbar__button' aria-label={cat.replace(/-/g, ' ')}>
+                  {cat.toUpperCase().replace(/-/g, ' ')}
+                </button>
+              </Link>)}
           </nav>
 
         </header>
