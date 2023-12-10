@@ -1,7 +1,13 @@
 @use '@/assets/_styles' as styles
 
-footer
-  @include styles.bottom-pinned-footer(4rem, styles.$midnight-green)
+.footer
+  @include styles.bottom-pinned-footer(0px)
 
-.footer__link
+  &__login
+    @include styles.login-icon
+
+  &__cart
+    @include styles.cart-icon
+
+  &__link
     @include styles.link( styles.$cherry-blossom-pink)

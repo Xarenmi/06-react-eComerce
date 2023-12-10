@@ -15,6 +15,7 @@ $montserrat: 'Montserrat', sans-serif
 $bold: 800
 $light: 300
 $normal: 500
+$medium: 600
 $lighter: 100
 
 // Screen Size
@@ -38,41 +39,9 @@ $large-screen: 1024px
   font-style: italic
 
 @mixin outline-text($color)
-  -webkit-text-stroke: 1px $color
-  text-stroke: 1px $color
-
-  //header & footer
-@mixin top-pinned-header($height, $bgcolor)
-  top: 0
-  height: $height
-  position: fixed
-  background-color: $bgcolor
-  @include inline-grid(1fr 1fr 8fr 0.5fr 0.5fr)
-
-@mixin search-bar($color)
-  width: calc(100% - 60px)
-  border: none
-  color: $color
-  height: 2.5rem
-  font-size: 15px
-  padding:0  20px
-  border-radius: 10px
-
-@mixin bottom-pinned-footer($height, $bgcolor)
-  bottom: 0
-  height: $height
-  position: fixed
-  background-color: $bgcolor
-  @include inline-flex(space-around)
+  text-shadow: -1px 0px 0px $color, 0px -1px 0px $color, 1px 0px 0px $color, 0px 1px 0px $color
 
   //flex
-@mixin inline-flex($spacing)
-  width: 100%
-  display: flex
-  flex-direction: row
-  align-items: center
-  justify-content: $spacing
-
 @mixin block-flex($width)
   width: $width
   display: flex
@@ -90,11 +59,73 @@ $large-screen: 1024px
   grid-template-columns: $columns
   grid-template-rows: repeat(auto-fit)
 
-@mixin autorow-grid($columns)
+@mixin autorow($columns)
+  width: 100%
+  display: grid
+  text-align: center
+  align-items: center
+  justify-content: space-around
+  grid-template-columns: $columns
+  grid-template-rows: repeat(auto-fit)
 
 @mixin centered-grid($bgcolor)
+  width: 100%
   display: grid
-  border-radius: 10px
+  border-radius: 0.66rem
   justify-items: center
   align-items: flex-start
   background-color: $bgcolor
+
+//responsive
+@mixin flex-wrap($margin)
+  width: calc(100% - $margin)
+  display: flex
+  flex-flow: row wrap
+  align-items: center
+  justify-content: space-around
+
+  //header & footer
+@mixin login-icon
+  line-height: 0
+  text-align: center
+  font-size: 2.5rem
+  color: white
+  margin: 0
+
+@mixin cart-icon
+  line-height: 0
+
+  p
+    text-align: center
+    font-size: 2rem
+    color: white
+    margin: 0
+
+  p:first-child
+    z-index: 1
+    font-size: 1rem
+    color: $banana-yellow
+    text-decoration: none
+
+@mixin top-pinned-header($height, $bgcolor)
+  top: 0
+  height: $height
+  position: fixed
+  background-color: $bgcolor
+  @include inline-grid(1fr 1fr 8fr 0.5fr 0.5fr)
+
+@mixin search-bar($color)
+  width: calc(100% - 60px)
+  border: none
+  color: $color
+  height: 2.5rem
+  font-size: 1rem
+  padding: 0 1.3rem
+  border-radius: 0.66rem
+
+@mixin bottom-pinned-footer($margin)
+  bottom: 0
+  height: 4rem
+  position: fixed
+  background-color: $midnight-green
+  @include inline-grid(repeat(3, 1fr))
