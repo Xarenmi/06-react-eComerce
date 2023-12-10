@@ -42,12 +42,13 @@ $large-screen: 1024px
   text-shadow: -1px 0px 0px $color, 0px -1px 0px $color, 1px 0px 0px $color, 0px 1px 0px $color
 
   //flex
-@mixin block-flex($width)
+@mixin block-flex($width, $direction)
   width: $width
   display: flex
   align-items: center
   justify-items: center
-  flex-direction: column
+  flex-direction: $direction
+  justify-content: space-around
 
   //grid
 @mixin inline-grid($columns)
@@ -59,13 +60,6 @@ $large-screen: 1024px
   grid-template-columns: $columns
   grid-template-rows: repeat(auto-fit)
 
-@mixin centered-grid($bgcolor)
-  width: 100%
-  display: grid
-  border-radius: 0.66rem
-  justify-items: center
-  align-items: flex-start
-  background-color: $bgcolor
 
 //responsive
 @mixin flex-wrap($margin)

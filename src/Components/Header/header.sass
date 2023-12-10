@@ -1,11 +1,12 @@
 @use "@/assets/_styles" as styles
 
 .header
-    @include styles.block-flex(100%)
+    @include styles.block-flex(100%, column)
     background-color: #048399
 
 .top
     width: 90%
+    z-index: 80
     @include styles.top-pinned-header(7rem, styles.$metallic-seaweed)
 
     @media (max-width: styles.$small-screen) 
@@ -62,11 +63,13 @@
         @include styles.cart-icon
 
 .navbar
+    top:0
     height: 2rem
+    z-index: 100
     position: fixed
     margin-top: 7rem
     background-color: styles.$cherry-blossom-pink
-    @include styles.flex-wrap(0px)
+    @include styles.block-flex(100%, row)
 
     &__button
         width: 100%
