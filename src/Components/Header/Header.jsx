@@ -22,19 +22,19 @@ const Header = () => {
           // get the latitude and longitude of the user's location
           const locationX = position.coords.latitude;
           const locationY = position.coords.longitude;
-          console.log(locationX, locationY)
+
           // make a GET request to the Nominatim API to get the address of the user's location
           const response = await axios.get(
             `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${locationX}&lon=${locationY}`
           );
 
           // extract the state from the response
-          const country = response.data.address.state;
-          console.log(country)
+          const location = response.data.address.state;
+
           // update the state with the new location
           setClient({
             ...client,
-            location: country,
+            location: location,
           });
         },
         () => {
