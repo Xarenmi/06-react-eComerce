@@ -55,6 +55,7 @@ const Header = () => {
   const categories = ['women', 'men', 'gadgets', 'automotive', 'home-decoration', 'skincare', 'groceries']
   let navCategories = screenSize <= 480 ? categories.slice(0, 5) : categories
 
+  //responsive jsx (?)
   return (
     <>
       {screenSize >= 481 && (
