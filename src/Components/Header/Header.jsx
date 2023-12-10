@@ -1,4 +1,6 @@
 import './header.sass'
+import axios from 'axios'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import logo from '@/assets/img/Xmart-logo.svg'
 import SearchBar from '@/Components/SearchBar/SearchBar'
@@ -7,20 +9,52 @@ import { BsCart4, BsFillPinMapFill, BsFillPersonFill } from 'react-icons/bs'
 
 const Header = () => {
   const { screenSize } = useScreenContext()
+  const [client, setClient] = useState({
+    name: 'Xarenmi',
+    location: 'worldwide',
+  });
+
+  const getLocation = async () => {
+    // check if geolocation is supported by the browser
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        async (position) => {
+          // get the latitude and longitude of the user's location
+          const locationX = position.coords.latitude;
+          const locationY = position.coords.longitude;
+          console.log(locationX, locationY)
+          // make a GET request to the Nominatim API to get the address of the user's location
+          const response = await axios.get(
+            `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${locationX}&lon=${locationY}`
+          );
+
+          // extract the state from the response
+          const country = response.data.address.state;
+          console.log(country)
+          // update the state with the new location
+          setClient({
+            ...client,
+            location: country,
+          });
+        },
+        () => {
+          alert("Location is not available.");
+        }
+      );
+    } else {
+      alert("Geolocation is not supported by this browser.");
+    }
+  };
+
+  useEffect(() => {
+    // call the getLocation function when the component mounts
+    getLocation();
+  }, []);
 
   const cartItems = [1, 2, 3, 4]
-  const client = {
-    name: 'Xarenmi',
-    locationX: '',
-    locationY: '',
-    location: 'worldwide'
-  }
-
-  //make getLocation function 
-
   const categories = ['women', 'men', 'gadgets', 'automotive', 'home-decoration', 'skincare', 'groceries']
   let navCategories = screenSize <= 480 ? categories.slice(0, 5) : categories
-  
+
   return (
     <>
       {screenSize >= 481 && (
@@ -34,14 +68,14 @@ const Header = () => {
                   className='top__logo'
                   src={logo}
                   alt='Xmart Logo'
-                  area-label= "Big 'M' in pink color" 
+                  area-label="Big 'M' in pink color"
                 />
                 <p>Xmart</p>
               </Link>
             </div>
             <div className='top__deliveryRegion' aria-label='Delivery region'>
               <p>Ship to:</p>
-              <BsFillPinMapFill aria-label='Pin on map'/>  {client.location}
+              <BsFillPinMapFill aria-label='Pin on map' />  {client.location}
             </div>
 
             <SearchBar />
