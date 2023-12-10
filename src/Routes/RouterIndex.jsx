@@ -9,9 +9,10 @@ export default function RouterIndex() {
                 <Route path="home" element={<Home />} />
                 <Route path="cart" element={<Cart />} />
                 <Route path="login" element={<Login />} />
-                <Route path="search/:name" element={<Search />} />
+                <Route path="search/" element={<Search />} />
                 <Route path="sell" element={<AddProduct />} />
                 <Route path="help" element={<Assistance />} />
+                <Route path="search/:name" element={<Search />} />
                 <Route path="product/:title" element={<Product />} />
                 <Route path="category/:name" element={<Category />} />
                 <Route index element={<Home />} />

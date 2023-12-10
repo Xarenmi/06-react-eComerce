@@ -6,9 +6,14 @@ import { useProductContext } from '@/Context/ProductsContext'
 const Search = () => {
   const { productList } = useProductContext()
   let { name } = useParams()
+  let products
 
-  const products = productList.filter((product) => product.title.toUpperCase().includes(name.toUpperCase()))
-
+  if (name === undefined){
+    name = ' '
+    products = productList.filter((product) => product.title.toUpperCase().includes(name.toUpperCase()))
+  } else {
+    products = productList.filter((product) => product.title.toUpperCase().includes(name.toUpperCase()))
+  }
 
   return (
     <main className='search'>
