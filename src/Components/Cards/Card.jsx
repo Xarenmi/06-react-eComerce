@@ -18,7 +18,7 @@ const Card = ({ id, className }) => {
   return (
     <Link to={`/product/${thisProduct.title}`} className={`${className}__link`}>
       <div id={id} className={className}>
-        <div className={`${className}__cardPic`} style={{ backgroundImage: `url(${pic})` }} aria-label={thisProduct.title}></div>
+        <img src={pic} className={`${className}__cardPic`} alt={thisProduct.title}/>
         <p>
           <span>-{thisProduct.discountPercentage}</span>
           <span> Sale!</span>
