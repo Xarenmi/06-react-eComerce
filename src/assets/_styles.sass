@@ -25,6 +25,13 @@ $large-screen: 1024px
 
 // Mixin
 
+@mixin button
+  border: none
+  padding: 0.5rem 2.3rem
+  border-radius: 0.6rem
+  color: $midnight-green
+  background-color: $cherry-blossom-pink
+
    //Font
 @mixin link($color)
   text-decoration: none
@@ -60,7 +67,6 @@ $large-screen: 1024px
   grid-template-columns: $columns
   grid-template-rows: repeat(auto-fit)
 
-
 //responsive
 @mixin flex-wrap($margin)
   width: calc(100% - $margin)
@@ -93,11 +99,11 @@ $large-screen: 1024px
     text-decoration: none
 
 @mixin top-pinned-header($height, $bgcolor)
-    top: 0
-    height: $height
-    position: fixed
-    background-color: $bgcolor
-    @include inline-grid(1fr 1fr 8fr 0.5fr 0.5fr)
+  top: 0
+  height: $height
+  position: fixed
+  background-color: $bgcolor
+  @include inline-grid(1fr 1fr 8fr 0.5fr 0.5fr)
 
 @mixin search-bar($color)
   width: calc(100% - 60px)
