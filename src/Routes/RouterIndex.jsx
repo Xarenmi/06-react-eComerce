@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-import { AddProduct, Assistance, Cart, Category, Home, Login, Product, Search } from '@/Pages'
+import { AddProduct, Assistance, Cart, Category, Home, Product, Search } from '@/Pages'
 import Root from './Root'
 
 export default function RouterIndex() {
@@ -8,7 +8,6 @@ export default function RouterIndex() {
             <Route path="/" element={<Root />}>
                 <Route path="home" element={<Home />} />
                 <Route path="cart" element={<Cart />} />
-                <Route path="login" element={<Login />} />
                 <Route path="search/" element={<Search />} />
                 <Route path="sell" element={<AddProduct />} />
                 <Route path="help" element={<Assistance />} />
