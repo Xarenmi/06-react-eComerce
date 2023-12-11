@@ -71,10 +71,5 @@
     background-color: styles.$cherry-blossom-pink
     @include styles.block-flex(100%, row)
 
-    &__button
-        width: 100%
-        height: 100%
-        border: none
-        border-radius: 0
-        color: styles.$midnight-green
-        background-color: styles.$cherry-blossom-pink
+    & button
+        @include styles.button

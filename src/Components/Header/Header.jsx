@@ -2,6 +2,7 @@ import './header.sass'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import Login from '@/Components/Login/Login'
 import logo from '@/assets/img/Xmart-logo.svg'
 import SearchBar from '@/Components/SearchBar/SearchBar'
 import { useScreenContext } from '@/Context/ScreenContext'
@@ -13,6 +14,12 @@ const Header = () => {
     name: 'Xarenmi',
     location: 'worldwide',
   });
+
+  const [isHidden, setIsHidden] = useState(true);
+
+  const toggleHidden = () => {
+    setIsHidden(!isHidden)
+  }
 
   const getLocation = async () => {
     // check if geolocation is supported by the browser
@@ -59,6 +66,7 @@ const Header = () => {
   return (
     <>
       {screenSize >= 481 && (
+        <>
         <header className='header'>
 
           <section className='top'>
@@ -81,9 +89,9 @@ const Header = () => {
 
             <SearchBar />
 
-            <Link to='/login'>
+            <div onClick={toggleHidden}>
               <BsFillPersonFill aria-label='Login button also works for signing up' className='top__login' />
-            </Link>
+            </div>
 
             <div className='top__cart' aria-label='Cart'>
               <Link to='/cart'>
@@ -91,6 +99,7 @@ const Header = () => {
                 <p><BsCart4 aria-label='Shopping cart' className='' /></p>
               </Link>
             </div>
+
           </section>
 
           <nav className='navbar' aria-label='Category navigation'>
@@ -98,9 +107,16 @@ const Header = () => {
           </nav>
 
         </header>
+        {!isHidden && (
+          <div>
+            <Login/>
+          </div>
+        )}
+        </>
       )}
 
       {screenSize <= 480 && (
+        <>
         <header>
           <section className='top'>
             <SearchBar />
@@ -115,6 +131,12 @@ const Header = () => {
           </nav>
 
         </header>
+        {!isHidden && (
+          <div>
+             <Login/>
+          </div>
+        )}
+        </>
       )}
     </>
   )
