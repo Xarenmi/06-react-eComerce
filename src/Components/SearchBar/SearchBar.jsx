@@ -2,7 +2,6 @@ import { useProductContext } from '@/Context/ProductsContext'
 import { useNavigation } from '@/Context/NavigationContext'
 import { BsSearch } from 'react-icons/bs'
 import React, { useState } from 'react'
-import '@/Components/Cards/card.sass'
 
 
 const SearchBar = () => {

@@ -67,75 +67,76 @@ const Header = () => {
     <>
       {screenSize >= 481 && (
         <>
-        <header className='header'>
+          <header className='header'>
 
-          <section className='top'>
+            <section className='top'>
 
-            <div className='top__logoContainer'>
-              <Link to='/' className='top__logoLink'>
-                <img
-                  className='top__logo'
-                  src={logo}
-                  alt='Xmart Logo'
-                  area-label="Big 'M' in pink color"
-                />
-                <p>Xmart</p>
-              </Link>
+              <div className='top__logoContainer'>
+                <Link to='/' className='top__logoLink'>
+                  <img
+                    className='top__logo'
+                    src={logo}
+                    alt='Xmart Logo'
+                    area-label="Big 'M' in pink color"
+                  />
+                  <p>Xmart</p>
+                </Link>
+              </div>
+              <div className='top__deliveryRegion' aria-label='Delivery region'>
+                <p>Ship to:</p>
+                <BsFillPinMapFill aria-label='Pin on map' />  {client.location}
+              </div>
+
+              <SearchBar />
+
+              <div onClick={toggleHidden}>
+                <BsFillPersonFill aria-label='Login button also works for signing up' className='top__login' />
+              </div>
+
+              <div className='top__cart' aria-label='Cart'>
+                <Link to='/cart'>
+                  <p>{cartItems.length}</p>
+                  <p><BsCart4 aria-label='Shopping cart' className='' /></p>
+                </Link>
+              </div>
+
+            </section>
+
+            <nav className='navbar' aria-label='Category navigation'>
+              {navCategories.map((cat, index) => <Link to={`/category/${cat}`} key={index}>
+                <button className='navbar__button'>{cat.toUpperCase().replace(/-/g, ' ')}</button> </Link>)}
+            </nav>
+
+          </header>
+          {!isHidden && (
+            <div>
+              <Login />
             </div>
-            <div className='top__deliveryRegion' aria-label='Delivery region'>
-              <p>Ship to:</p>
-              <BsFillPinMapFill aria-label='Pin on map' />  {client.location}
-            </div>
-
-            <SearchBar />
-
-            <div onClick={toggleHidden}>
-              <BsFillPersonFill aria-label='Login button also works for signing up' className='top__login' />
-            </div>
-
-            <div className='top__cart' aria-label='Cart'>
-              <Link to='/cart'>
-                <p>{cartItems.length}</p>
-                <p><BsCart4 aria-label='Shopping cart' className='' /></p>
-              </Link>
-            </div>
-
-          </section>
-
-          <nav className='navbar' aria-label='Category navigation'>
-            {navCategories.map((cat, index) => <Link to={`/category/${cat}`} key={index}> <button className='navbar__button'>{cat.toUpperCase().replace(/-/g, ' ')}</button> </Link>)}
-          </nav>
-
-        </header>
-        {!isHidden && (
-          <div>
-            <Login/>
-          </div>
-        )}
+          )}
         </>
       )}
 
       {screenSize <= 480 && (
         <>
-        <header>
-          <section className='top'>
-            <SearchBar />
-          </section>
-          <nav className='navbar' aria-label='Category navigation'>
-            {navCategories.map((cat, index) =>
-              <Link to={`/category/${cat}`} key={index}>
-                <button className='navbar__button' aria-label={cat.replace(/-/g, ' ')}>
-                  {cat.toUpperCase().replace(/-/g, ' ')}
-                </button>
-              </Link>)}
-          </nav>
+          <header>
+            <section className='top'>
+              <SearchBar />
+            </section>
+            <nav className='navbar' aria-label='Category navigation'>
+              {navCategories.map((cat, index) =>
+                <Link to={`/category/${cat}`} key={index}>
+                  <button className='navbar__button' aria-label={cat.replace(/-/g, ' ')}>
+                    {cat.toUpperCase().replace(/-/g, ' ')}
+                  </button>
+                </Link>)}
+            </nav>
 
-        </header>
-        {!isHidden && (
-          <div>
-             <Login/>
-          </div>
-        )}
+          </header>
+          {!isHidden && (
+            <div onClick={toggleHidden}>
+              <BsFillPersonFill aria-label='Login button also works for signing up' className='top__login' />
+            </div>
+          )}
         </>
       )}
     </>
