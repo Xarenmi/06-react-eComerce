@@ -1,5 +1,5 @@
 import { useProductContext } from '@/Context/ProductsContext'
-import { useNavigation } from '@/Context/NavigationContext'
+import { useNavigate } from 'react-router-dom'
 import { BsSearch } from 'react-icons/bs'
 import React, { useState } from 'react'
 
@@ -7,7 +7,7 @@ import React, { useState } from 'react'
 const SearchBar = () => {
     const { categories } = useProductContext()
     const [search, setSearch] = useState('')
-    const navigate = useNavigation()
+    const navigate = useNavigate()
 
     const additionalCategories = ['gadgets', 'women', 'men', 'home']
     const allCategories = [...categories, ...additionalCategories]
