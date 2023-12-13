@@ -28,11 +28,22 @@ $large-screen: 1024px
 @mixin button
   border: none
   height: 2rem
+  cursor: pointer
+  padding: 0 20px
   border-radius: 0.6rem
   color: $midnight-green
   background-color: $cherry-blossom-pink
 
-   //Font
+  &:hover
+    outline: 2px solid $turkish-rose
+    border-radius: 0.6rem
+
+  &:active 
+    background-color: $turkish-rose
+    font-size: 1rem
+
+
+//Font
 @mixin link($color)
   text-decoration: none
   color: $color

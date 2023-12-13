@@ -1,0 +1,115 @@
+@use '@/assets/_styles.sass' as styles
+
+.product
+  display: flex
+  padding: 20px
+  margin-top: 10rem
+  align-items: center
+  justify-content: space-around
+  
+  .product-gallery
+    display: flex
+    flex-direction: column
+    align-items: center
+    margin-top: 20px
+
+    .main-image
+      width: 300px
+      max-height: 300px
+      overflow: hidden
+
+      img
+        width: 100%
+        height: auto
+
+    .thumbnail-gallery
+      display: flex
+      justify-content: center
+      margin-top: 10px
+      transition: margin-top 0.3s ease
+
+      .gallery-item
+        width: 80px
+        height: 80px
+        overflow: hidden
+        margin: 0 5px
+        cursor: pointer
+        transition: border-color 0.3s ease
+
+        img
+          width: 100%
+          height: auto
+
+        &.active
+          border: 2px solid styles.$turkish-rose
+
+  .product-details
+    flex: 1
+    padding: 20px
+    height: 400px
+    margin: 0 50px
+    text-align: left
+    border-radius: 10px
+    background-color: styles.$main-bgcolor
+
+    h1
+      color: styles.$jesus-bgcolor
+      @include styles.outline-text(styles.$metallic-seaweed)
+
+    p
+      margin-bottom: 10px
+
+    // Rating displayed as yellow stars
+    p:nth-child(2) 
+      .star
+        margin-right: 5px
+        color: yellow
+
+    p:nth-child(3)
+      margin-top: 40px
+
+    // Discount label in a rounded red rectangle at the top right
+    p:nth-child(4)
+      position: absolute
+      top: 10rem
+      right: 10px
+      background-color: styles.$turkish-rose
+      color: white
+      padding: 8px
+      border-radius: 5px
+
+    //Price
+    p:nth-child(5)
+      margin: 20px 20px
+      text-align: right
+      line-height: 5rem
+      font-size: 2rem
+      font-weight: styles.$bold
+      color: styles.$metallic-seaweed
+
+    button
+      @include styles.button
+
+      
+
+@media screen and (max-width: 768px)
+  .product
+    flex-direction: column
+
+  .product-gallery
+    margin-top: 10px
+
+    .main-image
+      width: 100%
+      max-height: none
+
+    .thumbnail-gallery
+      flex-direction: row
+      flex-wrap: wrap
+
+      .gallery-item
+        margin: 5px
+
+  .product-details
+    margin: 50px 20px 20px 
+    height: auto
