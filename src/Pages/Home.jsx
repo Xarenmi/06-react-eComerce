@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import FourCardHolder from '@/Components/Cards/FourCardHolder'
 import { useProductContext } from '@/Context/ProductsContext'
 import { shuffle } from '@/assets/modules/shuffle.js'
@@ -7,10 +7,17 @@ const Home = () => {
   const user = 'Stranger'
   const { categories, loading } = useProductContext()
   const randomCategories = shuffle(categories, 6)
+  const [isReady, setIsReady] = useState(false);
+
+  useEffect(() => {
+    if (!loading) {
+      setIsReady(true);
+    }
+  },[loading]);
 
   return (
     <>
-      {!loading && (
+      {isReady ? (
         <main className='home'>
           <h1>{`Welcome back, ${user}`}</h1>
           <section className="home__display">
@@ -32,7 +39,7 @@ const Home = () => {
             </aside>
           </section>
         </main>
-      )}
+      ):null}
     </>
   );
 };
