@@ -11,7 +11,7 @@ import { BsCart4, BsFillPinMapFill, BsFillPersonFill } from 'react-icons/bs'
 const Header = () => {
   const { screenSize } = useScreenContext()
   const [client, setClient] = useState({
-    name: 'Xarenmi',
+    name: '',
     location: 'worldwide',
   });
 
@@ -132,11 +132,6 @@ const Header = () => {
             </nav>
 
           </header>
-          {!isHidden && (
-            <div onClick={toggleHidden}>
-              <BsFillPersonFill aria-label='Login button also works for signing up' className='top__login' />
-            </div>
-          )}
         </>
       )}
     </>
