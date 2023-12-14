@@ -12,14 +12,14 @@ const FourCardHolder = ({ category }) => {
   const selectedCategory = category ? category.replace(/-/g, ' ') : ''
 
   return (
-    <div className='fourCardHolder'>
-      <h2>{selectedCategory.toUpperCase()}</h2>
-      <div className='fourCardHolder__container'>
-        {randomProducts.map((product) => (
-          <Card key={product.id} id={product.id} className='fourCardHolder__container__card' />
-        ))}
+      <div className='fourCardHolder'>
+        <div className='fourCardHolder__container'>
+          <h2>{selectedCategory.toUpperCase()}</h2>
+          {randomProducts.map((product) => (
+            <Card key={product.id} id={product.id} className='fourCardHolder__container__card' />
+          ))}
+        </div>
       </div>
-    </div>
   )
 }
 

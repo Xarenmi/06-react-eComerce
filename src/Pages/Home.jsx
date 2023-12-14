@@ -4,7 +4,7 @@ import { useProductContext } from '@/Context/ProductsContext'
 import { shuffle } from '@/assets/modules/shuffle.js'
 
 const Home = () => {
-  const user = 'Xarenmi'
+  const user = 'Stranger'
   const { categories } = useProductContext()
   const randomCategories = shuffle(categories, 6)
 
