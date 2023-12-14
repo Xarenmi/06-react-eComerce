@@ -1,3 +1,4 @@
+import './card.sass'
 import React from 'react'
 import Card from '@/Components/Cards/Card'
 import { useParams } from 'react-router-dom'
@@ -22,7 +23,7 @@ const Search = () => {
 
           {products.length > 0 ? (
 
-            products.map((product) => <Card key={product.id} id={product.id} className='search__container__card' />)
+            products.map((product) => <Card key={product.id} id={product.id} className='card-container' />)
           ) : (
             <p>Your search has no results. Try with a different keyword.</p>
           )}

@@ -1,4 +1,4 @@
-import React from 'react'
+import './card.sass'
 import Card from '@/Components/Cards/Card'
 import { useParams } from 'react-router-dom'
 import { useProductContext } from '@/Context/ProductsContext'
@@ -32,10 +32,11 @@ const Category = () => {
 
   return (
     <main className='search'>
+
+      <h1>{`PRODUCTS IN ${name.toUpperCase().replace(/-/g, ' ')}`}</h1>
       <div className='search__container'>
-        <h1>{`PRODUCTS IN ${name.toUpperCase().replace(/-/g, ' ')}`}</h1>
         {categoryProducts.map((product) => (
-          <Card key={product.id} id={product.id} className='search__container__card' />
+          <Card key={product.id} id={product.id} className='card-container' />
         ))}
       </div>
     </main>

@@ -1,4 +1,3 @@
-import './card.sass'
 import { Link } from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
 import defaultPic from '@/assets/img/default.png'
@@ -19,12 +18,11 @@ const Card = ({ id, className }) => {
     <Link to={`/product/${thisProduct.title}`} className={`${className}__link`}>
       <div id={id} className={className}>
         <img src={pic} className={`${className}__cardPic`} alt={thisProduct.title}/>
-        <p>
-          <span>-{thisProduct.discountPercentage}</span>
-          <span> Sale!</span>
+        <p className='card__discount-box'>
+          -{thisProduct.discountPercentage}
         </p>
-        <p>${thisProduct.price} <span>Before: ${originalPrice}</span></p>
-        <h3>{thisProduct.title}</h3>
+        <p>${thisProduct.price} <span className='card__original-price'>Before: ${originalPrice}</span></p>
+        <h3 className='card__product-title'>{thisProduct.title}</h3>
       </div>
     </Link>
   )

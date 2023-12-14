@@ -1,0 +1,66 @@
+@use "@/assets/_styles" as styles
+
+.search
+    width: 100%
+    display: grid
+    grid-template-columns: 1fr
+    justify-items: center
+
+    & h1
+        @include styles.outline-text(styles.$midnight-green)
+        font-weight: styles.$medium
+        color: styles.$banana-yellow
+        width: 100%
+
+    &__container
+        @include styles.flex-wrap(0px)
+
+        & span
+            font-weight: styles.$light
+
+        & p
+            width: 100%
+            margin: 2rem 1rem
+
+.card-container
+    max-width: 350px
+    margin: 10px auto
+    padding: 20px
+    background-color: styles.$main-bgcolor
+    text-align: center
+
+    &__cardPic
+        width: 100%
+        max-width: 350px
+        height: 300px
+
+    &__link
+        color: styles.$turkish-rose
+        text-decoration: none
+
+.card
+
+    & p
+        max-width: 350px
+
+    & a 
+        text-decoration: none
+
+    &__discount-box
+        color: styles.$metallic-seaweed
+        
+        border-radius: 0 0 10px 10px
+        padding: 10px
+        text-align: right
+        background-color: styles.$banana-yellow
+
+    &__product-details
+        color: styles.$metallic-seaweed
+
+    &__original-price
+        text-decoration: line-through
+        color: styles.$cherry-blossom-pink
+
+    &__product-title
+        padding: 10px
+        color: styles.$cherry-blossom-pink
